@@ -23,11 +23,20 @@ document.querySelector("#shopping-cart-button").onclick = (e) => {
   shoppingCart.classList.toggle("active");
   e.preventDefault();
 };
+// profile
+let profileDropdownList = document.querySelector(".profile-dropdown-list");
+let btn = document.querySelector(".profile-dropdown-btn");
 
+
+document.querySelector("#profile-button").onclick = (e) => {
+  profileDropdownList.classList.toggle("active");
+  e.preventDefault();
+};
 // Klik di luar elemen
 const hm = document.querySelector("#hamburger-menu");
 const sb = document.querySelector("#search-button");
 const sc = document.querySelector("#shopping-cart-button");
+const pb = document.querySelector("#profile-button");
 
 document.addEventListener("click", function (e) {
   if (!hm.contains(e.target) && !navbarNav.contains(e.target)) {
@@ -40,6 +49,10 @@ document.addEventListener("click", function (e) {
 
   if (!sc.contains(e.target) && !shoppingCart.contains(e.target)) {
     shoppingCart.classList.remove("active");
+  }
+
+  if (!pb.contains(e.target) && !profileDropdownList.contains(e.target)){
+    profileDropdownList.classList.remove("active");
   }
 });
 
@@ -66,3 +79,9 @@ window.onclick = (e) => {
     itemDetailModal.style.display = "none";
   }
 };
+
+//set value
+
+
+
+
